@@ -5,7 +5,6 @@ const noteSchema = new Schema({
   title: String,
   content: String,
   createdAt: String,
-  
   archieved: Boolean,
   tags: [String],
   has_header: Boolean,
