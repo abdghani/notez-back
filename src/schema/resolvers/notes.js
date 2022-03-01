@@ -71,9 +71,9 @@ module.exports = {
         }
     },
     Query: {
-        async fetchNotes(_, { archieved }, { user }) {
-            console.log(user);
-            // const user = await CheckAuth(context);
+        async fetchNotes(_, { archieved }, context) {
+            // console.log(user);
+            const user = await CheckAuth(context);
             return await Note.find({ userSub: user.sub, archieved: archieved })
         },
         async fetchNote(_, { id }) {

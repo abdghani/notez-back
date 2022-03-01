@@ -3,17 +3,16 @@ const noteTypeDefs = require("./note")
 const memoTypeDefs = require("./memo")
 const todoTypeDefs = require("./todo")
 
-const typeDefa = `
+const typeDef = `
     type Mutation {
         createNote(addNote: AddNote): Note!
         reformNote(updateNote: UpdateNote): Note!
         deleteNote(id: ID!): String!
         archieveNote(id: ID! status: Boolean!): Note!
 
-        createTodo(content: String! tdate: String!): Todo!
-        updateTodo(id: ID! status: Boolean! updatedAt: String!): Todo!
+        createTodo(createTodoInput: CreateTodoInput): Todo!
+        updateTodo(updateTodoInput: UpdateTodoInput): Todo!
 
-        
         createMemo(addMemo: AddMemo): Memo!
         removeMemo(id: ID!): String!
     }
@@ -25,4 +24,4 @@ const typeDefa = `
     }
 `
 
-module.exports = [typeDefa, noteTypeDefs, memoTypeDefs, todoTypeDefs]
+module.exports = [typeDef, noteTypeDefs, memoTypeDefs, todoTypeDefs]
